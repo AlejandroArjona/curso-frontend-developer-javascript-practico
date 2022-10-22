@@ -2,9 +2,17 @@ const menuEmail = document.querySelector(".navbar-email");
 const desktopMenu = document.querySelector(".desktop-menu");
 const menuHamIcon = document.querySelector(".menu");
 const mobileMenu = document.querySelector(".mobile-menu");
+const shoppingCart = document.querySelector(".navbar-shopping-cart");
+const MyOrder = document.querySelector(".product-detail");
 
 menuEmail.addEventListener("click", toggleDesktopMenu);
 menuHamIcon.addEventListener("click", toggleMobileMenu);
+shoppingCart.addEventListener("click", toggleShoppingCart);
+
+function toggleShoppingCart(){
+    MyOrder.classList.toggle("inactive"); 
+    
+}
 
 function toggleMobileMenu(){
     mobileMenu.classList.toggle("inactive"); 
