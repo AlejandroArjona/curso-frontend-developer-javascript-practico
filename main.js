@@ -10,12 +10,19 @@ menuHamIcon.addEventListener("click", toggleMobileMenu);
 shoppingCart.addEventListener("click", toggleShoppingCart);
 
 function toggleShoppingCart(){
-    MyOrder.classList.toggle("inactive"); 
-    
+    const isMobileMenuClosed = mobileMenu.classList.contains("inactive");
+    if(!isMobileMenuClosed) {//Si al abrir el menuMobile, el carrito esta abierto, entonces cierralo añadiendo inactive
+        mobileMenu.classList.add("inactive");
+    }
+    MyOrder.classList.toggle("inactive");
 }
 
 function toggleMobileMenu(){
-    mobileMenu.classList.toggle("inactive"); 
+    const isAsideClosed = MyOrder.classList.contains("inactive");
+    if(!isAsideClosed) {//Si al abrir el carrito de compras, el menuMobile esta abierto, entonces cierralo añadiendo inactive
+        MyOrder.classList.add("inactive");
+    }
+    mobileMenu.classList.toggle("inactive");
 }
 
 function toggleDesktopMenu(){
